@@ -1,0 +1,50 @@
+{
+  "name": "koa-boilerplate",
+  "version": "0.0.1",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "serve": "node --experimental-specifier-resolution=node dist/server.js",
+    "debug": "yarn build && yarn watch-debug",
+    "nodemon-debug": "nodemon --inspect src/server.ts",
+    "watch-ts": "tsc -w",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm:watch-ts\" \"npm:nodemon-debug\""
+  },
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "@koa/router": "^10.1.1",
+    "axios": "^0.26.1",
+    "consola": "^2.15.3",
+    "dayjs": "^1.11.1",
+    "dotenv": "^16.0.0",
+    "exceljs": "^4.3.0",
+    "joi": "^17.6.0",
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "mime-types": "^2.1.35",
+    "mongodb": "^4.5.0",
+    "qs": "^6.10.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/koa": "^2.13.4",
+    "@types/koa-json": "^2.0.20",
+    "@types/koa-logger": "^3.1.2",
+    "@types/koa__cors": "^3.3.0",
+    "@types/koa__router": "^8.0.11",
+    "@types/mime-types": "^2.1.1",
+    "@types/node": "^17.0.25",
+    "@types/qs": "^6.9.7",
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  }
+}
